@@ -1,0 +1,123 @@
+-- filepath: c:\Users\yolic\OneDrive\Desktop\sql\Generador_de_reportes\database.mysql
+
+-- Eliminar la base de datos si ya existe
+DROP DATABASE Nombre_de_la_base_de_datos;
+
+-- Crear una nueva base de datos
+CREATE DATABASE Nombre_de_la_base_de_datos;
+
+-- Seleccionar la base de datos para usarla
+USE nombre_de_la_base_de_datos;
+
+-- Crear tabla de empleados con información básica
+-- VARCHAR es un tipo de dato que almacena cadenas de textode longitud variable, el numero dentro de () indica el numero de caracteres maximos
+-- UNIQUE asegura que no haya duplicados en la columna especificada
+-- PRIMARY KEY es la clave primaria de la tabla, que identifica de manera unica cada fila y se usa para establecer relaciones entre tablas que tengan FOREIGN KEY 
+-- FOREIGN KEY es una restricción que establece una relación entre dos tablas, asegurando la integridad referencial de los datos, hace referencia a la clave primaria de otra tabla
+-- DECIMAL es un tipo de dato que almacena números decimales, el primer número indica la cantidad total de dígitos y el segundo número indica la cantidad de dígitos después del punto decimal
+-- DATE es un tipo de dato que almacena fechas en formato 'YYYY-MM-DD'
+
+CREATE TABLE Empleados(
+id_empleado VARCHAR(20) UNIQUE PRIMARY KEY, 
+Nombre VARCHAR(100),
+Puesto VARCHAR(50),
+Telefono VARCHAR(20),
+Correo VARCHAR(50),
+Direccion VARCHAR(100)
+);
+
+CREATE TABLE Clientes(
+id_cliente VARCHAR(20) UNIQUE PRIMARY KEY,
+Nombre VARCHAR(100),
+Telefono VARCHAR(20),
+Correo VARCHAR(50),
+Direccion VARCHAR(100)
+);
+
+CREATE TABLE Proveedores(
+id_proveedor VARCHAR(20) UNIQUE PRIMARY KEY,
+Nombre VARCHAR(100),
+Telefono VARCHAR(20),
+Correo VARCHAR(50),
+Direccion VARCHAR(100)
+);
+
+CREATE TABLE Productos(
+id_producto VARCHAR(20) UNIQUE PRIMARY KEY,
+producto VARCHAR(100),
+descripcion VARCHAR(100),
+categoria VARCHAR(50),
+proveedor VARCHAR(50),
+FOREIGN KEY (proveedor) REFERENCES Proveedores(id_proveedor),
+precio_de_compra DECIMAL(10,2),
+precio_de_venta DECIMAL(10,2)
+); 
+
+CREATE TABLE Ventas(
+id_venta VARCHAR(20) UNIQUE PRIMARY KEY,
+empleado VARCHAR(100),
+FOREIGN KEY (empleado) REFERENCES Empleados(id_empleado),
+producto VARCHAR(100),
+FOREIGN KEY (producto) REFERENCES Productos(id_producto),
+cliente VARCHAR(50),
+FOREIGN KEY (cliente) REFERENCES Clientes(id_cliente),
+fecha VARCHAR(50),
+cantidad_producto DECIMAL(10,2),
+precio_de_venta DECIMAL(10,2),
+precio_total DECIMAL(10,2),
+metodo_de_pagpo VARCHAR(50),
+canal_de_venta VARCHAR(50)
+);
+
+CREATE TABLE Pedidos(
+id_pedido VARCHAR(20) UNIQUE PRIMARY KEY,
+empleado VARCHAR(100),
+FOREIGN KEY (empleado) REFERENCES Empleados(id_empleado),
+cliente VARCHAR(50),
+FOREIGN KEY (cliente) REFERENCES Clientes(id_cliente),
+producto VARCHAR(100),
+FOREIGN KEY (producto) REFERENCES Productos(id_producto),
+fecha_pedido DATE,
+fecha_entrega_estimada DATE,
+estado_pedido VARCHAR(20)
+);
+
+CREATE TABLE Inventario(
+producto VARCHAR(100),
+FOREIGN KEY (producto) REFERENCES Productos(id_producto),
+proveedor VARCHAR(50),
+FOREIGN KEY (proveedor) REFERENCES Proveedores(id_proveedor),
+categoria VARCHAR(50),
+cantidad_existente DECIMAL(10,2),
+stock_minimo DECIMAL(10,2),
+ultima_actualizacion DATE,
+estatus VARCHAR(20)
+);
+
+-- Insertar un proveedor de ejemplo
+INSERT INTO Proveedores(id_proveedor, Nombre, Telefono, Correo, Direccion)
+VALUES ('PR5', 'nombre del proveedor', 'numero telefonico','correo@ejemplo.com','Direccion');
+
+-- Cargar datos desde un archivo CSV a la tabla Empleados
+LOAD DATA INFILE 'Ruta_del_archivo/Empleados.csv'
+INTO TABLE Empleados
+FIELDS TERMINATED BY ',' -- Campos separados por comas
+ENCLOSED BY '"' -- Campos encerrados entre comillas
+LINES TERMINATED BY '\n'; -- Líneas terminadas con salto de línea
+
+-- Query para corregir el nombe de una columna, en este caso, la columna metodo_de_pago
+ALTER TABLE Ventas
+CHANGE metodo_de_pagpo metodo_de_pago VARCHAR(50);
+
+-- Mostrar todas las tablas en la base de datos
+SHOW TABLES;
+
+-- Consultar todos los registros de la tabla Ventas
+SELECT * FROM Ventas;
+
+-- Mostrar la estructura de la tabla Ventas
+SHOW CREATE TABLE Ventas;
+
+-- Query para modificar el tipo de dato de una columna, en este caso, la columna fecha, que pasa de VARCHAR a DATE
+ALTER TABLE Ventas
+MODIFY COLUMN fecha DATE;

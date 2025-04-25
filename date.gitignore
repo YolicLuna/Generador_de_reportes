@@ -1,0 +1,14 @@
+# Ignorar archivos de configuración sensibles
+date.json
+# Ignorar archivos de configuración sensibles
+date.json
+
+# Ignorar archivos y carpetas generados automáticamente
+__pycache__/
+*.pyc
+*.pyo
+*.log
+
+# Ignorar archivos de sistema
+.DS_Store
+Thumbs.db
