@@ -94,9 +94,9 @@ ultima_actualizacion DATE,
 estatus VARCHAR(20)
 );
 
--- Insertar un proveedor de ejemplo
+-- Insertar datos en una tabla de la base de datos, en este ejemplo, la tabla proveedores
 INSERT INTO Proveedores(id_proveedor, Nombre, Telefono, Correo, Direccion)
-VALUES ('PR5', 'nombre del proveedor', 'numero telefonico','correo@ejemplo.com','Direccion');
+VALUES ('id del proveedor', 'nombre del proveedor', 'numero telefonico','correo de proveedor','Direccion');
 
 -- Cargar datos desde un archivo CSV a la tabla Empleados
 LOAD DATA INFILE 'Ruta_del_archivo/Empleados.csv'
@@ -112,11 +112,11 @@ CHANGE metodo_de_pagpo metodo_de_pago VARCHAR(50);
 -- Mostrar todas las tablas en la base de datos
 SHOW TABLES;
 
--- Consultar todos los registros de la tabla Ventas
-SELECT * FROM Ventas;
+-- Consultar todos los registros de una tabla
+SELECT * FROM nombre_de_la_tabla;
 
--- Mostrar la estructura de la tabla Ventas
-SHOW CREATE TABLE Ventas;
+-- Query para mostrar la estructura de una tabla
+SHOW CREATE TABLE nombre_de_la_tabla;
 
 -- Query para modificar el tipo de dato de una columna, en este caso, la columna fecha, que pasa de VARCHAR a DATE
 ALTER TABLE Ventas
