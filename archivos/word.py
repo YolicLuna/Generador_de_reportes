@@ -49,7 +49,7 @@ def generar_reporte(periodo, conexion, config):
     document = Document()
     document.add_heading("Resultados de análisis", level=1)
 
-    # Lista de consultas (sin modificar las consultas SQL existentes)
+    # Lista de consultas MySQL
     consultas = [
         {
             "titulo": f"Clientes más valiosos ({inicio} a {fin})",
