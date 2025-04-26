@@ -47,6 +47,7 @@ Crea un archivo llamado `date.json` en el mismo directorio que los scripts. Este
     "password": "tu_contraseña",
     "database": "nombre_de_tu_base_de_datos",
     "port": 3306
+    "output_folder": "C:\\Users\\yolic\\OneDrive\\Desktop\\nombre_del archivo"
 }
 
       **output_folder:** Especifica la carpeta donde se guardarán los reportes generados. Si no se especifica o la carpeta no existe, los reportes se guardarán en el directorio actual.
