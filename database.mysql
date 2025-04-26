@@ -1,4 +1,4 @@
--- filepath: c:\Users\yolic\OneDrive\Desktop\sql\Generador_de_reportes\database.mysql
+
 
 -- Eliminar la base de datos si ya existe
 DROP DATABASE Nombre_de_la_base_de_datos;
