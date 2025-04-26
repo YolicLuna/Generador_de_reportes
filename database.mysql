@@ -105,7 +105,7 @@ FIELDS TERMINATED BY ',' -- Campos separados por comas
 ENCLOSED BY '"' -- Campos encerrados entre comillas
 LINES TERMINATED BY '\n'; -- Líneas terminadas con salto de línea
 
--- Query para corregir el nombe de una columna, en este caso, la columna metodo_de_pago
+-- Query para corregir el nombre de una columna, en este caso, la columna metodo_de_pago
 ALTER TABLE Ventas
 CHANGE metodo_de_pagpo metodo_de_pago VARCHAR(50);
 
