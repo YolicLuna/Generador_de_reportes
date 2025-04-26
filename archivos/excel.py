@@ -49,7 +49,7 @@ def generar_reporte(periodo, conexion, config):
     workbook = Workbook()
     workbook.remove(workbook.active)  # Eliminar la hoja predeterminada
 
-    # Lista de consultas (sin modificar las consultas SQL existentes)
+    # Lista de consultas MySQL
     consultas = [
         {
             "titulo": f"Clientes más valiosos ({inicio} a {fin})",
