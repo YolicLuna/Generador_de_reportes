@@ -51,8 +51,10 @@ Crea un archivo llamado `date.json` en el mismo directorio que los scripts. Este
 }
 
       output_folder: Especifica la carpeta donde se guardarán los reportes generados. Si no se especifica o la carpeta no existe, los reportes se guardarán en el directorio actual.
+```
 
-2. Crear la Base de Datos y Tablas
+
+### 2. Crear la Base de Datos y Tablas
 
 Si no tienes experiencia con SQL o necesitas configurar la base de datos desde cero, este proyecto incluye un archivo llamado database.mysql que contiene los scripts necesarios para crear la base de datos, las tablas y algunos datos de ejemplo.
 
@@ -74,12 +76,14 @@ Pasos para usar el archivo database.mysql:
   - Ejemplo de carga de datos desde un archivo CSV: Muestra cómo cargar datos masivos en una tabla.
 
 
-⚠️RECUERDA: Este archivo es solo un ejemplo y puedes modificarlo
-  según tus necesidades. La estructura de las tablas y los datos de ejemplo son personalizables. 
-  No olvides ajustar las consultas SQL en los archivos 'word.py' y 'excel.py' para que coincidan con la estructura de tu base de datos. ⚠️
+### ⚠️RECUERDA: Este archivo es solo un ejemplo y puedes modificarlo según tus necesidades. La estructura de las tablas y los datos de ejemplo son personalizables. No olvides ajustar las consultas SQL en los archivos 'word.py' y 'excel.py' para que coincidan con la estructura de tu base de datos. ⚠️
 
-🛠️ Uso del Proyecto
-1. Probar los Scripts Manualmente
+
+
+## 🛠️ Uso del Proyecto
+
+
+### 1. Probar los Scripts Manualmente
 
   1. Abre una terminal o consola.
 
@@ -91,11 +95,14 @@ Pasos para usar el archivo database.mysql:
   python excel.py
 
 
-2. Automatizar la Ejecución
+
+### 2. Automatizar la Ejecución
 
 Para que los reportes se generen automáticamente cada semana, mes y año, configura el Programador de Tareas en Windows o un cron job en Linux.
 
-Usar el Programador de Tareas en Windows
+
+
+### Usar el Programador de Tareas en Windows
  1. Abre el Programador de Tareas (Win + S y busca "Programador de Tareas").
  2. Haz clic en Crear tarea.
  3. Configura la tarea:
@@ -118,7 +125,7 @@ Usar el Programador de Tareas en Windows
     Guarda la tarea y verifica que se ejecute correctamente.
 
 
-Usar un Cron Job en Linux
+### Usar un Cron Job en Linux
   1. Abre el archivo de configuración de cron:
      crontab -e
 
@@ -137,7 +144,8 @@ Usar un Cron Job en Linux
 
 
 
-📂 Estructura del Proyecto
+### 📂 Estructura del Proyecto
+
 
 Mi_proyecto/
 │
@@ -151,17 +159,17 @@ Mi_proyecto/
     └── script.sql       # Script SQL para crear las tablas necesarias
  
 
- 📝 Notas Importantes
+#### 📝 Notas Importantes
 Asegúrate de que los scripts tengan acceso a la base de datos configurada en date.json.
 Si encuentras algún error, verifica los mensajes en la consola para identificar el problema.
 Los reportes generados se guardarán en el mismo directorio que los scripts.
 
-🤝 Contribuciones
+#### 🤝 Contribuciones
 Si deseas contribuir a este proyecto, siéntete libre de hacer un fork y enviar un pull request. ¡Toda ayuda es bienvenida!
 
-📧 Contacto
+#### 📧 Contacto
 Si tienes preguntas o necesitas ayuda, no dudes en contactarme en yolic.luna.ps@gmail.com.
 
 
 
-¡Gracias por usar este proyecto! 🎉
+## ¡Gracias por usar este proyecto! 🎉
