@@ -146,14 +146,13 @@ Para que los reportes se generen automáticamente cada semana, mes y año, confi
 
 ### 📂 Estructura del Proyecto
 
-```
-Mi_proyecto/│├── archivos/ │├── word.py          # Genera reportes en formato Word
-                           │├── excel.py         # Genera reportes en formato Excel
-                           │├── date.json        # Configuración de conexión a la base de datos
-                           │└── README.md        # Documentación del proyecto
-                           │
-                           └── sql/
-                                   └── script.sql       # Script SQL para crear las tablas necesarias
+
+Mi_proyecto/│├── archivos/ ├── word.py          # Genera reportes en formato Word
+             │             ├── excel.py         # Genera reportes en formato Excel
+             |             ├── date.json        # Configuración de conexión a la base de datos
+             |             └── README.md        # Documentación del proyecto
+             │
+             └── sql/|── script.sql       # Script SQL para crear las tablas necesarias
 ```
  
 
