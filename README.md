@@ -50,16 +50,16 @@ Crea un archivo llamado `date.json` en el mismo directorio que los scripts. Este
     "output_folder": "Ruta_de_la_carpeta_en_donde_se_guardaran_los_archivos"
 }
 
-      **output_folder:** Especifica la carpeta donde se guardarán los reportes generados. Si no se especifica o la carpeta no existe, los reportes se guardarán en el directorio actual.
+      output_folder: Especifica la carpeta donde se guardarán los reportes generados. Si no se especifica o la carpeta no existe, los reportes se guardarán en el directorio actual.
 
-### 2. Crear la Base de Datos y Tablas
+2. Crear la Base de Datos y Tablas
 
-Si no tienes experiencia con SQL o necesitas configurar la base de datos desde cero, este proyecto incluye un archivo llamado **database.mysql** que contiene los scripts necesarios para crear la base de datos, las tablas y algunos datos de ejemplo.
+Si no tienes experiencia con SQL o necesitas configurar la base de datos desde cero, este proyecto incluye un archivo llamado database.mysql que contiene los scripts necesarios para crear la base de datos, las tablas y algunos datos de ejemplo.
 
-**Pasos para usar el archivo database.mysql:**
+Pasos para usar el archivo database.mysql:
 
   1. Abre tu cliente MySQL (como MySQL Workbench o la terminal de MySQL).
-  2.Ejecuta el archivo database.mysql para crear la base de datos y las tablas necesarias:
+  2. Ejecuta el archivo database.mysql para crear la base de datos y las tablas necesarias:
        mysql -u tu_usuario -p < ruta/del/archivo/database.mysql
 
   3. Esto creará automáticamente:
@@ -68,13 +68,13 @@ Si no tienes experiencia con SQL o necesitas configurar la base de datos desde c
       -Algunos datos de ejemplo para comenzar.
 
 ¿Qué contiene el archivo database.mysql?
-  - **Creación de la base de datos:** Define la base de datos que se usará para los reportes.
-  - **Creación de tablas:** Incluye tablas como Empleados, Clientes, Proveedores, etc., con sus relaciones.
-  - **Inserción de datos de ejemplo:** Proporciona datos iniciales para probar el proyecto.
-  - **Ejemplo de carga de datos desde un archivo CSV:** Muestra cómo cargar datos masivos en una tabla.
+  - Creación de la base de datos: Define la base de datos que se usará para los reportes.
+  - Creación de tablas: Incluye tablas como Empleados, Clientes, Proveedores, etc., con sus relaciones.
+  - Inserción de datos de ejemplo: Proporciona datos iniciales para probar el proyecto.
+  - Ejemplo de carga de datos desde un archivo CSV: Muestra cómo cargar datos masivos en una tabla.
 
 
-⚠️***RECUERDA:*** Este archivo es solo un ejemplo y puedes modificarlo
+⚠️RECUERDA: Este archivo es solo un ejemplo y puedes modificarlo
   según tus necesidades. La estructura de las tablas y los datos de ejemplo son personalizables. 
   No olvides ajustar las consultas SQL en los archivos 'word.py' y 'excel.py' para que coincidan con la estructura de tu base de datos. ⚠️
 
@@ -99,14 +99,14 @@ Usar el Programador de Tareas en Windows
  1. Abre el Programador de Tareas (Win + S y busca "Programador de Tareas").
  2. Haz clic en Crear tarea.
  3. Configura la tarea:
-    **General:**
+    General:
         - Asigna un nombre a la tarea (por ejemplo, "Generar Reportes").
         - Marca la opción Ejecutar con los privilegios más altos.
-    **Desencadenadores:**
+    Desencadenadores:
         - Haz clic en Nuevo y selecciona la frecuencia (semanal, 
           mensual, etc.).
          Configura la fecha y hora de inicio.
-    **Acciones:**
+    Acciones:
         - Haz clic en Nuevo y selecciona Iniciar un programa.
         - En el campo Programa/script, escribe:
           python
@@ -118,7 +118,7 @@ Usar el Programador de Tareas en Windows
     Guarda la tarea y verifica que se ejecute correctamente.
 
 
-**Usar un Cron Job en Linux**
+Usar un Cron Job en Linux
   1. Abre el archivo de configuración de cron:
      crontab -e
 
